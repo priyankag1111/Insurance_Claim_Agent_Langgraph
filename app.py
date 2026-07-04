@@ -1,4 +1,4 @@
-!pip install -q streamlit
+#!pip install -q streamlit
 """
 Streamlit application for the Insurance Claim Processing Agent (LangGraph).
 
