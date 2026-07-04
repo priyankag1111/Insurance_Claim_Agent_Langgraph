@@ -1,0 +1,6 @@
+langchain-core
+langgraph
+typing_extensions
+langchain-groq
+python-dotenv
+streamlit
