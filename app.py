@@ -265,10 +265,10 @@ with tab_samples:
                         run_claim(claim)
                     st.rerun()
 
-    if st.session_state.graph_state:
-        st.divider()
-        st.markdown("### Result")
-        render_result(st.session_state.graph_state)
+#    if st.session_state.graph_state:
+#        st.divider()
+#        st.markdown("### Result")
+#        render_result(st.session_state.graph_state)
 
 
 # ---------------------------------------------------------------------------
