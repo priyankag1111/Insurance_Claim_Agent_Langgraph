@@ -308,7 +308,7 @@ Document Verify      Eligibility Check       Fraud Detection      <- PARALLEL fa
 - **Parallel execution**: `document_verification`, `eligibility_check`, and `fraud_detection` all fan out directly from `START` and run concurrently; their results fan back in to `claim_summary`.
 - **Conditional edges**: `add_conditional_edges` routes each claim to either the `human_approval` node or straight to `finalize_auto`, based on the decision engine's output.
 - **Human-in-the-loop**: the graph is compiled with `interrupt_before=["human_approval"]` and a `MemorySaver` checkpointer, so execution pauses and waits for a real reviewer decision (captured in the Streamlit UI) before resuming via `update_state` + `invoke(None, config)`.
-- **LLM + fallback**: every agent node first attempts a GPT-4o-mini call for its reasoning step, and falls back to transparent rule-based logic if no API key is configured or the call fails — so the app is always runnable end-to-end.
+- **LLM + fallback**: every agent node first attempts a GROQ LLM for its reasoning step, and falls back to transparent rule-based logic if no API key is configured or the call fails — so the app is always runnable end-to-end.
 """
     )
 
